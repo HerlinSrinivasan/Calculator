@@ -21,18 +21,22 @@ buttons.forEach((button)=> {
 });
 document.addEventListener("keydown", (e) => {
 const key = e.key;
-if (!isNaN(key) || key === ".") {
+    if (!isNaN(key) || key === ".") {
       calculate(key);
     }
-if (["+", "-", "*", "/", "%"].includes(key)) {
+    if (["+", "-", "*", "/", "%"].includes(key)) {
       calculate(key);
     }
-if (key === "Enter") {
+    if (key === "Enter") {
       e.preventDefault(); // Prevent form submission if any
       calculate("=");
     }
-if (key === "Backspace") {
+    if (key === "Backspace") {
       e.preventDefault();
       calculate("DEL");
     }
+    if (key === "Escape") {
+      calculate("AC");
+    }
+  });
   
